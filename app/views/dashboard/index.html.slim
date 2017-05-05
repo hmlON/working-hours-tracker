@@ -1,4 +1,4 @@
 .dashboard
   h2 Dashboard
-  .hours-left = "You have #{current_user.job.hours_per_week} hours left this week"
+  .hours-left = "You have #{current_user.job.hours_left_this_week} hours left this week"
   .worked-day-form = render 'worked_days/form'
