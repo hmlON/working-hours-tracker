@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505194929) do
+ActiveRecord::Schema.define(version: 20170505205127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,5 +43,15 @@ ActiveRecord::Schema.define(version: 20170505194929) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "worked_days", force: :cascade do |t|
+    t.bigint "job_id"
+    t.date "date"
+    t.integer "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_worked_days_on_job_id"
+  end
+
   add_foreign_key "jobs", "users"
+  add_foreign_key "worked_days", "jobs"
 end
