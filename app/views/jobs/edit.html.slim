@@ -1,0 +1,5 @@
+.edit-job
+  | How many hours per week do you work?
+  = simple_form_for @job do |f|
+    = f.input :hours_per_week
+    = f.submit 'Save'
