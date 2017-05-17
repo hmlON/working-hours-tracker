@@ -1,5 +1,5 @@
 .new-job
   | How many hours per week do you work?
-  = simple_form_for @job do |f|
+  = simple_form_for(@job, url: job_path) do |f|
     = f.input :hours_per_week
     = f.submit 'Continue'
