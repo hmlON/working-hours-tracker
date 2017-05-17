@@ -4,6 +4,6 @@
 
   .this-week
     - @worked_days_this_week.each do |worked_day|
-      = "#{worked_day.week_day}: #{worked_day.hours}"
+      .week-day = "#{worked_day.week_day}: #{worked_day.hours} "
 
   .worked-day-form = render 'worked_days/form'
