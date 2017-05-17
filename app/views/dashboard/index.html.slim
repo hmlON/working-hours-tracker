@@ -1,4 +1,9 @@
 .dashboard
   h2 Dashboard
   .hours-left = "You have #{current_user.job.hours_left_this_week} hours left this week"
+
+  .this-week
+    - @worked_days_this_week.each do |worked_day|
+      = "#{worked_day.week_day}: #{worked_day.hours}"
+
   .worked-day-form = render 'worked_days/form'
