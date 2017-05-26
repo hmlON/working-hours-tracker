@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_job
 
   def index
     @worked_days_this_week = current_user.job.worked_days_this_week
