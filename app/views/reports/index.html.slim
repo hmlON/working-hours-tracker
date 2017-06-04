@@ -2,6 +2,7 @@
   h1 Report
   .weeks
     - @weeks.each do |week|
+      .date-range = "#{week.range.first} - #{week.range.last}"
       - week.worked_days.each do |worked_day|
         .week-day = "#{worked_day.week_day}: #{worked_day.hours} "
       hr
