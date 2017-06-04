@@ -7,8 +7,11 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    - if user_signed_in?
-      = link_to 'Sign out',destroy_user_session_path, method: :delete
+    ul.nav
+      li = link_to 'Dashboard', dashboard_path
+      li = link_to 'Report', report_path
+      - if user_signed_in?
+        li = link_to 'Sign out', destroy_user_session_path, method: :delete
     p.notice = notice
     p.alert = alert
     = yield

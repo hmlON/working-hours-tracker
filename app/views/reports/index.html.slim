@@ -1,0 +1,7 @@
+.report
+  h1 Report
+  .weeks
+    - @weeks.each do |week|
+      - week.worked_days.each do |worked_day|
+        .week-day = "#{worked_day.week_day}: #{worked_day.hours} "
+      hr
