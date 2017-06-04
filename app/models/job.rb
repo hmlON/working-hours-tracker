@@ -14,7 +14,7 @@ class Job < ApplicationRecord
     days = worked_days.where(date: Date.today.beginning_of_week..Date.today)
     this_week = []
     worked_week_days.each do |date|
-      this_week << (days.find { |day| day.date == date } || NotWorkedDay.new(date))
+      this_week << (days.find { |day| day.date == date } || WorkedDay.new(date: date, hours: 0))
     end
     this_week
   end
