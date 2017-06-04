@@ -3,7 +3,7 @@ class WorkedWeek
 
   def initialize(job:, date: Date.today)
     @job = job
-    @range = Date.today.beginning_of_week..Date.today.end_of_week
+    @range = date.beginning_of_week..date.end_of_week
   end
 
   def worked_days
