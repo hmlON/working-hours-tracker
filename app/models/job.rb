@@ -2,25 +2,12 @@ class Job < ApplicationRecord
   belongs_to :user
   has_many :worked_days
 
-
-  #TODO: improve this to dynamic job week days
-  def worked_week_days
-    [1, 2, 3, 4, 5].map do |week_day_number|
-      (Date.today.beginning_of_week..Date.today.end_of_week).to_a[week_day_number - 1]
-    end
-  end
-
-  def worked_days_this_week
-    days = worked_days.where(date: Date.today.beginning_of_week..Date.today)
-    this_week = []
-    worked_week_days.each do |date|
-      this_week << (days.find { |day| day.date == date } || WorkedDay.new(date: date, hours: 0))
-    end
-    this_week
+  def week_day_numbers
+    [1, 2, 3, 4, 5]
   end
 
   def hours_per_day
-    hours_per_week / worked_week_days.count
+    hours_per_week / week_day_numbers.count
   end
 
   def hours_this_week
