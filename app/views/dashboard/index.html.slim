@@ -3,7 +3,7 @@
 
   .this-week
     - @worked_days_this_week.each do |worked_day|
-      .day.today
+      .day class=worked_day.today_css_class
         .week-day = worked_day.week_day
         .worked-hours = worked_day.hours
 

@@ -5,6 +5,7 @@
   .this-week
     display: flex
     justify-content: center
+    flex-wrap: wrap
 
     .day
       padding: 0.5rem 2rem
@@ -20,4 +21,16 @@
         font-size: 1.5em
 
     .today
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+      color: $main-color
+
+  #new_worked_day
+    text-align: center
+
+    h1
+      font-size: 1.25em
+
+    input, select
+      margin: 0.25rem
+
+    label:after
+      content: ":"
