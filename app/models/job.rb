@@ -15,6 +15,6 @@ class Job < ApplicationRecord
   end
 
   def hours_left_this_week
-    hours_per_week - hours_this_week
+    [hours_per_week - hours_this_week, 0].max
   end
 end

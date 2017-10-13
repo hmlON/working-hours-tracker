@@ -1,1 +1,23 @@
+.dashboard
+  .hours-left
+    text-align: center
 
+  .this-week
+    display: flex
+    justify-content: center
+
+    .day
+      padding: 0.5rem 2rem
+      margin: 1rem
+      text-align: center
+      @extend .card
+
+      .week-day
+        border-bottom: 2px solid
+
+      .worked-hours
+        margin: 5px
+        font-size: 1.5em
+
+    .today
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
